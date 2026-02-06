@@ -1,4 +1,4 @@
-C++ Low-Latency Exchange Simulator
+## C++ Low-Latency Exchange Simulator
 
 High-performance order book and market feed handler for ultra-low-latency trading.
 
