@@ -1,6 +1,0 @@
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/trading_lib.dir
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/benchmark.dir
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/simulator.dir
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/test.dir
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/edit_cache.dir
-/Users/jiaenchang/Projects/trading/build/CMakeFiles/rebuild_cache.dir

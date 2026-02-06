@@ -1,0 +1,44 @@
+# ==========================
+# Build folders
+# ==========================
+build/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# ==========================
+# IDE / editor files
+# ==========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ==========================
+# OS files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Temporary / backup
+# ==========================
+*~
+*.tmp
+*.bak
