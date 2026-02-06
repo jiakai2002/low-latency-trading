@@ -1,8 +1,8 @@
 C++ Low-Latency Exchange Simulator
 
-High-performance order book and market feed handler for ultra-low-latency trading experiments.
+High-performance order book and market feed handler for ultra-low-latency trading.
 
-## Key Features
+## Optimizations
 
 - Sub-microsecond order book operations
 - Lock-free queues for concurrency
