@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtrading_lib.a CMakeFiles/trading_lib.dir/src/benchmark.cpp.o CMakeFiles/trading_lib.dir/src/market_data_handler.cpp.o CMakeFiles/trading_lib.dir/src/order_book.cpp.o CMakeFiles/trading_lib.dir/src/simulator.cpp.o CMakeFiles/trading_lib.dir/src/test.cpp.o
+/usr/bin/ranlib libtrading_lib.a

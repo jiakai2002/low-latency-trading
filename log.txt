@@ -1,0 +1,46 @@
+fixed-length arr
+
+Add Order (ns)
+mean        261
+p50         209
+p90         291
+p99         333
+p99.9       2959
+
+Best Price Read (ns)
+mean        30
+p50         41
+p90         42
+p99         42
+p99.9       42
+
+Cancel Order (ns)
+mean        190
+p50         167
+p90         209
+p99         250
+p99.9       1292
+
+reversed vec
+
+Add (ns)
+mean        470
+p50         417
+p90         500
+p99         584
+p99.9       3250
+
+BestPrice (ns)
+mean        23
+p50         41
+p90         42
+p99         42
+p99.9       42
+
+Cancel (ns)
+mean        449
+p50         458
+p90         500
+p99         542
+p99.9       1833
+
