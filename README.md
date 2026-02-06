@@ -1,21 +1,19 @@
-Low-Latency Trading Systems Framework
+C++ Low-Latency Exchange Simulator
 
-## Overview
-
-This is my approach for a high-performance, production-grade C++ framework for building ultra-low-latency trading systems, used for quantitative finance and systems programming. My focus was on highly efficient and especially clean code.
-I saw this project as a challenge, trying to push as hard as I can, seeing what I can get done if I give it my all.
+High-performance order book and market feed handler for ultra-low-latency trading experiments.
 
 ## Key Features
 
-- 🚀 Sub-microsecond latency processing (blazingly fast IMO)
-- 🔬 Statistical arbitrage strategy
-- 🧊 Lock-free concurrent data structures
-- 📊 Market data simulation (though, only a simulation)
-- 🔍 Detailed performance benchmarking (run them yourself =)!)
+- Sub-microsecond order book operations
+- Lock-free queues for concurrency
+- Zero-copying message handling
+- Cache-line aligned data structures
+- Memory pool allocation
+- Bid price normalization (store as negative) – avoids branch mispredictions in the hot path for fast best-bid/best-ask calculations.
 
 ## Performance Highlights
 
-### Benchmark Results (M1 iMac, Sonoma)
+### Benchmark Results (M1 iMac, macOS Sonoma)
 
 #### Order Book Operations
 - **Add Order**: 
@@ -32,22 +30,6 @@ I saw this project as a challenge, trying to push as hard as I can, seeing what 
   - P90 : 0.21 µs
   - P99 : 0.25 µs
   - P99.9: 1.29 µs
-
-#### Lock-Free Queue
-- **Push/Pop Operations**: 
-  - Mean Latency: ~14.5 ns
-  - Consistently under 42 ns at 99th percentile
-
-## Technical Architecture
-
-### Components
-- **Order Book**: Optimized 
-- **Market Data Handler**: Real-time binary market data feed processing
-
-### Optimizations
-- Zero-overhead abstractions
-- Cache-line optimized data structures
-- Statistical arbitrage modeling
 
 ## Getting Started
 
