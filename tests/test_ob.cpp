@@ -44,7 +44,6 @@ void test_order_book() {
     // Check remaining best bid/ask
     auto bestBid = book.get_best_bid().value_or(0);
     auto bestAsk = book.get_best_ask().value_or(0);
-    std::cout << "Best Bid: " << bestBid << ", Best Ask: " << bestAsk << "\n";
 
     // Remaining bids: order 1 (50, 15)
     // Remaining asks: order 4 (58, 12)

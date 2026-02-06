@@ -36,9 +36,11 @@ add_library(trading_lib STATIC ${LIB_SOURCES})
 # Executables
 add_executable(benchmark src/benchmark.cpp)
 add_executable(simulator src/simulator.cpp)
-add_executable(test src/test.cpp)
+add_executable(test_ob tests/test_ob.cpp)
+add_executable(test_handler tests/test_handler.cpp)
 
 # Link library
 target_link_libraries(benchmark PRIVATE trading_lib)
 target_link_libraries(simulator PRIVATE trading_lib)
-target_link_libraries(test PRIVATE trading_lib)
+target_link_libraries(test_ob PRIVATE trading_lib)
+target_link_libraries(test_handler PRIVATE trading_lib)

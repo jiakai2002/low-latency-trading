@@ -37,7 +37,7 @@ private:
         std::uniform_int_distribution<uint64_t> id_dist(1, 1000000);
         std::uniform_int_distribution<int> side_dist(0, 1); // 0=Buy,1=Sell
         std::uniform_int_distribution<uint32_t> qty_dist(1, 100);
-        std::normal_distribution<double> price_dist(150, 50); // mid-market 150, sigma 50
+        std::normal_distribution<double> price_dist(65, 20); // mid-market 65, sigma 20
         std::uniform_int_distribution<int> action_dist(0, 99); // 0-99 for probability
 
         while (!stop_) {
