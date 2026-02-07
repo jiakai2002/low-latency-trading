@@ -14,23 +14,8 @@ High-performance order book and market feed handler for ultra-low-latency tradin
 ## Performance Highlights
 
 ### Benchmark Results (M1 iMac, macOS Sonoma)
-
-#### Order Book Operations
-- **Add Order**: 
-  - Mean : 35 ns
-  - P50 :  41 ns
-  - P90 :  42 ns
-  - P99 :  42 ns
-  - P99.9 : 2375 ns
-- **Best Bid/Ask Lookup**: 
-  - Mean : 16 ns
-  - P99.9 : 42 ns
-- **Cancel Order**: 
-  - Mean : 31 ns
-  - P50 : 41 ns
-  - P90 : 42 ns
-  - P99 : 42 ns
-  - P99.9: 1417 ns
+ 
+<img width="421" height="747" alt="Screenshot 2026-02-07 at 4 25 51 PM" src="https://github.com/user-attachments/assets/cad7e540-ba09-4c55-8aca-f33dab054891" />
 
 ## Getting Started
 
