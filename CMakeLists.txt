@@ -27,20 +27,18 @@ file(GLOB_RECURSE LIB_SOURCES
     "src/*.cpp"
     "src/**/*.cpp"
 )
-# Remove any file in misc/
-list(FILTER LIB_SOURCES EXCLUDE REGEX ".*/misc/.*")
 
 # Create the library
-add_library(trading_lib STATIC ${LIB_SOURCES})
+add_library(lib STATIC ${LIB_SOURCES})
 
 # Executables
-add_executable(benchmark src/benchmark.cpp)
-add_executable(simulator src/simulator.cpp)
-add_executable(test_ob tests/test_ob.cpp)
-add_executable(test_handler tests/test_handler.cpp)
+add_executable(benchmark benchmark/benchmark.cpp)
+add_executable(simulator examples/simulator.cpp)
+add_executable(test_order_book tests/test_order_book.cpp)
+add_executable(test_market_data_handler tests/test_market_data_handler.cpp)
 
 # Link library
-target_link_libraries(benchmark PRIVATE trading_lib)
-target_link_libraries(simulator PRIVATE trading_lib)
-target_link_libraries(test_ob PRIVATE trading_lib)
-target_link_libraries(test_handler PRIVATE trading_lib)
+target_link_libraries(benchmark PRIVATE lib)
+target_link_libraries(simulator PRIVATE lib)
+target_link_libraries(test_order_book PRIVATE lib)
+target_link_libraries(test_market_data_handler PRIVATE lib)

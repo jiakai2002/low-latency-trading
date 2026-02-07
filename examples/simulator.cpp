@@ -1,8 +1,8 @@
-#include "order_book.hpp"
-#include "market_data_handler.hpp"
-#include "generator.hpp"
-#include "lock_free_queue.hpp"
-#include "logger.hpp"
+#include "../include/core/order_book.hpp"
+#include "../include/utils/generator.hpp"
+#include "../include/core/market_data_handler.hpp"
+#include "../include/utils/lock_free_queue.hpp"
+#include "../include/utils/logger.hpp"
 #include <iostream>
 #include <thread>
 #include <atomic>
@@ -68,19 +68,6 @@ int main() {
                 case MessageType::BBOUpdate:
                     break;
             }
-
-            // Print stats immediately after processing this message
-            auto bestBid = book.get_best_bid().value_or(0);
-            auto bestAsk = book.get_best_ask().value_or(0);
-
-            size_t queueSize = queue.approx_size();
-
-            logger.log(
-                "[Stats] BestBid: " + std::to_string(bestBid) +
-                ", BestAsk: " + std::to_string(bestAsk) +
-                ", Processed: " + std::to_string(ordersProcessed.load()) +
-                "\n"
-            );
 
             if (ordersProcessed % 50 == 0) {
                 logger.print();

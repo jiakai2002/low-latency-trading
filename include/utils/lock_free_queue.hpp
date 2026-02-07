@@ -27,12 +27,6 @@ public:
         return item;
     }
 
-    size_t approx_size() const {
-        size_t tail = tail_.load(std::memory_order_acquire);
-        if (head_ >= tail) return head_ - tail;
-        return N - tail + head_; // wrap-around
-    }
-
 private:
     T* buffer_[N];
     size_t head_;   // producer only

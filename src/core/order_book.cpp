@@ -1,4 +1,4 @@
-#include "order_book.hpp"
+#include "../../include/core/order_book.hpp"
 #include <algorithm>
 #include <limits>
 #include <cassert>
@@ -30,7 +30,8 @@ void OrderBook::update_best_prices() {
 }
 
 void OrderBook::add_order(const Order& order) {
-    orders_[order.id] = order;
+    // orders_[order.id] = order;
+    orders_.emplace(order.id, order);
 
     int norm_price = (order.side == Side::Bid ? -order.price : order.price);
     int idx = price_to_index(norm_price);

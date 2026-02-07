@@ -1,5 +1,5 @@
 #pragma once
-#include "config.hpp"
+#include "../utils/config.hpp"
 #include <array>
 #include <unordered_map>
 #include <cstdint>

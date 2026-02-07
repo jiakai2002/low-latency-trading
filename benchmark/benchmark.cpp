@@ -1,5 +1,5 @@
-#include "order_book.hpp"
-#include "config.hpp"
+#include "../include/utils/config.hpp"
+#include "../include/core/order_book.hpp"
 #include <chrono>
 #include <iostream>
 #include <iomanip>
@@ -63,7 +63,7 @@ void benchmark_order_book() {
     // Random number generators
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int64_t> price_dist(90000, 11000);  // Price between 90.00 and 110.00
+    std::uniform_int_distribution<int64_t> price_dist(70000, 90000);  // Price between 70.00 and 90.00
     std::uniform_int_distribution<int64_t> quantity_dist(1, 100);
     std::uniform_int_distribution<int> side_dist(0, 1);
 
