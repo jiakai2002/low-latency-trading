@@ -17,20 +17,25 @@ High-performance order book and market feed handler for ultra-low-latency tradin
 
 #### Order Book Operations
 - **Add Order**: 
-  - Mean : 0.6 µs
-  - P50 :  0.4 µs
-  - P90 :  0.4 µs
-  - P99 :  0.8 µs
-  - P99.9 : 3.8 µs
-- **Best Bid/Ask Lookup**: 
-  - Mean : 0.2 µs
-  - P99.9 : 0.4 µs
+  - Mean : 35 ns
+  - P50 :  41 ns
+  - P90 :  42 ns
+  - P99 :  42 ns
+  - P99.9 : 2300 ns
 - **Cancel Order**: 
-  - Mean : 0.4 µs
-  - P50 : 0.4 µs
-  - P90 : 0.4 µs
-  - P99 : 0.4 µs
-  - P99.9: 1.5 µs
+  - Mean : 31 µs
+  - P50 : 42 µs
+  - P90 : 42 µs
+  - P99 : 42 µs
+  - P99.9: 1417 µs
+- **Modify Order**: 
+  - Mean : 18 µs
+  - P99.9 : 125 µs
+- **Get best bid/ask**: 
+  - Mean : 16 µs
+  - P99.9 : 42 µs
+ 
+<img width="421" height="747" alt="Screenshot 2026-02-07 at 4 25 51 PM" src="https://github.com/user-attachments/assets/cad7e540-ba09-4c55-8aca-f33dab054891" />
 
 ## Getting Started
 
