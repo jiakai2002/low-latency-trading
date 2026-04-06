@@ -8,21 +8,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Compiler-specific options
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    # High optimization level with LTO
     set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -flto -march=native")
-    # Extra warnings and strict compilation
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
 elseif(MSVC)
-    # High optimization level
     set(CMAKE_CXX_FLAGS_RELEASE "/O2 /DNDEBUG /GL")
-    # Warning level 4
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
 endif()
 
 # Include directories
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Library sources (ignore misc/)
+# Library sources
 file(GLOB_RECURSE LIB_SOURCES
     "src/*.cpp"
     "src/**/*.cpp"
@@ -31,14 +27,34 @@ file(GLOB_RECURSE LIB_SOURCES
 # Create the library
 add_library(lib STATIC ${LIB_SOURCES})
 
+# ------------------------------
 # Executables
-add_executable(benchmark benchmark/benchmark.cpp)
-add_executable(simulator examples/simulator.cpp)
-add_executable(test_order_book tests/test_order_book.cpp)
-add_executable(test_market_data_handler tests/test_market_data_handler.cpp)
+# ------------------------------
 
-# Link library
+# Benchmark
+add_executable(benchmark benchmark/benchmark.cpp)
 target_link_libraries(benchmark PRIVATE lib)
+set_target_properties(benchmark PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/benchmark
+)
+
+# Simulator
+add_executable(simulator examples/simulator.cpp)
 target_link_libraries(simulator PRIVATE lib)
+set_target_properties(simulator PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/simulator
+)
+
+# OrderBook Test
+add_executable(test_order_book tests/test_order_book.cpp)
 target_link_libraries(test_order_book PRIVATE lib)
+set_target_properties(test_order_book PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests
+)
+
+# MarketDataHandler Test
+add_executable(test_market_data_handler tests/test_market_data_handler.cpp)
 target_link_libraries(test_market_data_handler PRIVATE lib)
+set_target_properties(test_market_data_handler PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/tests
+)

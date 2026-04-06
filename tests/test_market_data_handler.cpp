@@ -5,7 +5,7 @@
 
 using namespace trading;
 
-int main() {
+void test_market_data_handler() {
     // Create queue
     MarketDataHandler::Queue queue;
     MarketDataHandler handler(queue);
@@ -72,5 +72,9 @@ int main() {
     handler.release_message(msg);
 
     std::cout << "All MarketDataHandler tests passed!\n";
+}
+
+int main() {
+    test_market_data_handler();
     return 0;
 }
